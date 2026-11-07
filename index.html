@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 33rd monthsarry bebbu!</title>
+  <meta name="description" content="A romantic single-page journey celebrating Happy 33rd monthsarry bebbu!">
+
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Floating Rose Petals / Hearts Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header class="header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        Happy 33rd <span>Monthsarry Bebbu!</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#memories" class="nav-link">Our Memories</a></li>
+          <li><a href="#reasons" class="nav-link">Why I Love You</a></li>
+          <li><a href="#letter" class="nav-link">Love Letter</a></li>
+        </ul>
+      </nav>
+
+      <!-- Music Player Controls -->
+      <button class="music-toggle-btn" id="music-btn" title="Play 'Perfect' by Ed Sheeran">
+        <div class="sound-wave" id="sound-wave">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span id="music-btn-text">Play "Perfect"</span>
+      </button>
+      <audio id="bg-music" src="assets/perfect.mp3" loop preload="auto"></audio>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-badge reveal" id="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+      <span id="hero-badge-text">33 Months of Endless Love</span>
+    </div>
+
+    <h1 class="hero-title reveal delay-1" id="hero-title">
+      Happy 33rd <span class="gradient-text">monthsarry bebbu!</span>
+    </h1>
+
+    <p class="hero-subtitle reveal delay-2">
+      A journey of shared laughter, quiet mornings, unforgettable adventures, and a love that grows stronger with every
+      passing day.
+    </p>
+
+    <!-- ========================================================================= -->
+    <!-- PHOTO SLIDESHOW: Hero Portrait Frame (Auto-crossfade & click to advance) -->
+    <!-- ========================================================================= -->
+    <div class="hero-portrait-wrapper reveal delay-3">
+      <div class="hero-portrait-frame" id="hero-slideshow-frame" role="button" tabindex="0" title="Click to view next photo" aria-label="Couple photo slideshow. Click to view next photo.">
+        <div class="hero-slideshow-container" id="hero-slideshow-container">
+          <img src="assets/anniversary_selfie.jpg" alt="Hero Portrait Slideshow Photo"
+            class="hero-portrait-img hero-slide active" id="hero-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Anniversary Counter Widget -->
+    <div class="hero-timer-container reveal delay-4" id="timer-container">
+      <div class="timer-box">
+        <span class="timer-value" id="days-count">1095</span>
+        <span class="timer-label">Days</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-value" id="hours-count">26280</span>
+        <span class="timer-label">Hours</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-value" id="minutes-count">1576800</span>
+        <span class="timer-label">Minutes</span>
+      </div>
+      <div class="timer-box">
+        <span class="timer-value" id="seconds-count">00</span>
+        <span class="timer-label">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Smooth Scroll Down Indicator -->
+    <a href="#memories" class="scroll-indicator reveal delay-4">
+      <span>Explore Our Journey</span>
+      <div class="mouse-icon">
+        <div class="wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Our Memories Section (Interactive Calendar & Gallery) -->
+  <section class="section" id="memories">
+    <div class="section-header reveal">
+      <span class="section-subtitle">33 Months of Memories Captured in Time</span>
+      <h2 class="section-title">Our Memory Calendar & Gallery</h2>
+      <div class="title-divider">
+        <div class="line"></div>
+        <span class="heart">♥</span>
+        <div class="line"></div>
+      </div>
+
+      <!-- View Switcher (Calendar View vs Grid View) -->
+      <div class="gallery-view-switcher">
+        <button class="view-switch-btn active" id="btn-calendar-view" data-view="calendar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Calendar View
+        </button>
+        <button class="view-switch-btn" id="btn-grid-view" data-view="grid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Photo Grid View
+        </button>
+      </div>
+    </div>
+
+    <!-- Year Filter Tabs -->
+    <div class="gallery-filters reveal delay-1">
+      <button class="filter-btn active" data-filter="all">All 33 Months</button>
+      <button class="filter-btn" data-filter="year1">Year 1 • Months 1 - 12 (2023 - 2024)</button>
+      <button class="filter-btn" data-filter="year2">Year 2 • Months 13 - 24 (2024 - 2025)</button>
+      <button class="filter-btn" data-filter="year3">Year 3 • Months 25 - 33 (2025 - 2026)</button>
+    </div>
+
+    <!-- Interactive Calendar Container -->
+    <div class="calendar-grid-wrapper reveal delay-2" id="calendar-view-container">
+      <!-- Calendar month cards dynamically rendered by JavaScript -->
+    </div>
+
+    <!-- Photo Grid Container (Grid View Alternative) -->
+    <div class="memories-grid hidden" id="grid-view-container">
+      <!-- Grid cards dynamically rendered/managed by JavaScript -->
+    </div>
+  </section>
+
+  <!-- "Why I Love You" Section -->
+  <section class="section" id="reasons">
+    <div class="section-header reveal">
+      <span class="section-subtitle">A Few of the Million Reasons</span>
+      <h2 class="section-title">Why I Love You</h2>
+      <div class="title-divider">
+        <div class="line"></div>
+        <span class="heart">♥</span>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="reasons-grid">
+      <div class="reason-card reveal">
+        <div class="reason-num">01</div>
+        <h3 class="reason-title">Your Warm Smile</h3>
+        <p class="reason-text">the smile you show me makes me want to savor the smile of yours, it gives me hope, and
+          peace of mind, and it makes me feel like the luckiest man in the world</p>
+      </div>
+
+      <div class="reason-card reveal delay-1">
+        <div class="reason-num">02</div>
+        <h3 class="reason-title">Your Kindness</h3>
+        <p class="reason-text">You treat everyone around you with genuine warmth, compassion, and patience that
+          continuously inspires me.</p>
+      </div>
+
+      <div class="reason-card reveal delay-2">
+        <div class="reason-num">03</div>
+        <h3 class="reason-title">Our Inside Jokes</h3>
+        <p class="reason-text">We have our own secret language of shared looks and laughter that nobody else
+          understands.</p>
+      </div>
+
+      <div class="reason-card reveal">
+        <div class="reason-num">04</div>
+        <h3 class="reason-title">Unconditional Support</h3>
+        <p class="reason-text">No matter what challenge arises, knowing you stand beside me gives me strength and calm.
+        </p>
+      </div>
+
+      <div class="reason-card reveal delay-1">
+        <div class="reason-num">05</div>
+        <h3 class="reason-title">Cozy Evenings</h3>
+        <p class="reason-text">Simply sitting together doing nothing in quiet comfort is my absolute favorite place to
+          be in the world.</p>
+      </div>
+
+      <div class="reason-card reveal delay-2">
+        <div class="reason-num">06</div>
+        <h3 class="reason-title">Our Shared Future</h3>
+        <p class="reason-text">Every plan, dream, and adventure ahead looks brighter because I get to build it with you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Love Letter Section -->
+  <section class="section" id="letter">
+    <div class="section-header reveal">
+      <span class="section-subtitle">Straight From My Heart</span>
+      <h2 class="section-title">A Love Letter For You</h2>
+      <div class="title-divider">
+        <div class="line"></div>
+        <span class="heart">♥</span>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="letter-wrapper reveal delay-1">
+      <div class="letter-envelope">
+        <!-- Wax Seal Badge -->
+        <div class="wax-seal-badge" title="Sealed with Love">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+        </div>
+
+        <div class="letter-header">
+          <h3 class="letter-salutation">My Dearest Love,</h3>
+        </div>
+
+        <!-- Editable Love Letter Content -->
+        <div class="letter-body">
+          <p>
+            Hi Bebbu, I've made this letter while we're on a break, and I just wanted to express my love and
+            appreciation for you.
+            We may have a lot of fights, and i may have been avoiding you, but I want you to know that I love you very
+            much and I miss you
+            I made this website to appreciate you, and our 33rd Monthsarry, I may not have been great, I may have made
+            you suffer at the Moments
+            But I hope you know that it was never my intention to hurt you, and I'm so sorry for everything. I want you
+            to know that even though
+            We have been fighting, my love for you doesn't change. Fun fact, I'm making this at 3 am cause I can't
+            sleep, thinking of you.
+          </p>
+
+          <p>
+            Bebbu, I love you. I know I haven't been expressive on how I feel, but trust me, I do love you and I'm so
+            grateful to have you in my life
+            I'm not good with words, but I hope you understand how I feel. I want you to know that you're the most
+            special person in my life, and I can't imagine my life without you.
+            We may have our differences, and we know how you give me an attitude (I mean always haha), Please have mercy
+            on me haha.
+          </p>
+
+          <p>
+            Thank you for your patience, your endless affection, and for being my best friend and partner in everything.
+            Thank you for choosing me, for loving me as I am, and for making every single day sweeter just by being in
+            it.
+          </p>
+
+          <p> Cheers for us to reach 33 months, and a lifetime of love, adventure, and happiness ahead of us.
+          </p>
+        </div>
+
+        <div class="letter-signature">
+          <span class="signature-closing">Forever & Always Yours,</span>
+          <span class="signature-name">With All My Love ♥</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calendar Photo Album Modal -->
+  <div class="calendar-modal" id="calendar-album-modal" aria-hidden="true" role="dialog">
+    <div class="calendar-modal-content">
+      <div class="calendar-modal-header">
+        <div class="calendar-modal-title-group">
+          <span class="calendar-modal-badge" id="album-badge">Year 1 • October 2023</span>
+          <h3 class="calendar-modal-title" id="album-title">Memories from October 2023</h3>
+        </div>
+        <button class="calendar-modal-close" id="calendar-modal-close" title="Close Modal">✕</button>
+      </div>
+
+      <div class="calendar-modal-body">
+        <p class="calendar-modal-subtitle" id="album-subtitle">Click on any photo to open full resolution preview.</p>
+        <div class="album-photos-grid" id="album-photos-grid">
+          <!-- Album photos rendered dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- High-Quality Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog">
+    <!-- Lightbox Header -->
+    <div class="lightbox-header">
+      <span class="lightbox-counter" id="lightbox-counter">1 / 4</span>
+      <div class="lightbox-controls">
+        <button class="lightbox-btn" id="lightbox-zoom-out" title="Zoom Out (-)">-</button>
+        <button class="lightbox-btn" id="lightbox-zoom-in" title="Zoom In (+)">+</button>
+        <button class="lightbox-btn" id="lightbox-zoom-reset" title="Reset Zoom">⟲</button>
+        <button class="lightbox-btn" id="lightbox-close" title="Close (ESC)">✕</button>
+      </div>
+    </div>
+
+    <!-- Lightbox Main Stage -->
+    <div class="lightbox-stage" id="lightbox-stage">
+      <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" title="Previous Image (Left Arrow)">❮</button>
+
+      <div class="lightbox-img-container">
+        <img src="" alt="" class="lightbox-img" id="lightbox-target-img">
+      </div>
+
+      <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" title="Next Image (Right Arrow)">❯</button>
+    </div>
+
+    <!-- Lightbox Footer Caption -->
+    <div class="lightbox-footer">
+      <h4 class="lightbox-caption-title" id="lightbox-title">Memory Title</h4>
+      <p class="lightbox-caption-desc" id="lightbox-desc">Memory Description</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <button class="footer-heart-btn" id="heart-burst-btn" title="Send a Heart!">💖</button>
+    <p class="footer-text">Made with endless love • Happy 33rd monthsarry bebbu!</p>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
